@@ -11,5 +11,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://gaolileo.com/sitemap.xml
+Sitemap: https://gaolileo.com/news-sitemap.xml
 Sitemap: https://gaolileo.com/baidusitemap.xml
