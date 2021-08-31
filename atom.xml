@@ -6,7 +6,7 @@
   <link href="http://gaolileo.com/atom.xml" rel="self"/>
   
   <link href="http://gaolileo.com/"/>
-  <updated>2021-08-31T11:16:25.390Z</updated>
+  <updated>2021-08-31T13:51:21.464Z</updated>
   <id>http://gaolileo.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo部署出现err:error:spawn failed和authorization failed解决办法</title>
+    <link href="http://gaolileo.com/posts/46749.html"/>
+    <id>http://gaolileo.com/posts/46749.html</id>
+    <published>2021-08-31T07:16:06.000Z</published>
+    <updated>2021-08-31T13:51:21.464Z</updated>
+    
+    <content type="html"><![CDATA[<p>有段时间没更新了，突然间报错不能用，提示authorization failed，查了下是git不再支持用户名密码验证了，其实改一下仓库地址就可以了。<br>原来用的https的仓库，改成ssh的仓库地址就行了。</p><span id="more"></span><p>如果改了仓库地址还是报spawn failed的错误，执行以下操作：<br><code>##执行</code><br><code>git config --global core.autocrlf false</code><br><code>##最后</code><br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;有段时间没更新了，突然间报错不能用，提示authorization failed，查了下是git不再支持用户名密码验证了，其实改一下仓库地址就可以了。&lt;br&gt;原来用的https的仓库，改成ssh的仓库地址就行了。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>视频搬运全流程、自动化、批量化解决方案（抖音运营必看）</title>
@@ -27,23 +44,6 @@
     
     
     <summary type="html">&lt;p&gt;经常看些外网的视频很不错，想下载下来发发抖音，没想到整个流程这么复杂，下载、转格式、烧字幕、剪辑，整个过程搞下来效率非常低，于是探索了下自动化的工具，分享给大家。&lt;br&gt;本方法全部基于MacOS，以youtube视频为例，全部采用命令行使用，需要一定的代码基础，或者你可以按我写的一步步来，也不需要太多代码知识。&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署出现err:error:spawn failed和authorization failed解决办法</title>
-    <link href="http://gaolileo.com/posts/46749.html"/>
-    <id>http://gaolileo.com/posts/46749.html</id>
-    <published>2021-04-21T10:09:49.536Z</published>
-    <updated>2021-08-31T11:17:45.759Z</updated>
-    
-    <content type="html"><![CDATA[<p>有段时间没更新了，突然间报错不能用，提示authorization failed，查了下是git不再支持用户名密码验证了，其实改一下仓库地址就可以了。<br>原来用的https的仓库，改成ssh的仓库地址就行了。</p><span id="more"></span><p>如果改了仓库地址还是报spawn failed的错误，执行以下操作：<br><code>##执行</code><br><code>git config --global core.autocrlf false</code><br><code>##最后</code><br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;有段时间没更新了，突然间报错不能用，提示authorization failed，查了下是git不再支持用户名密码验证了，其实改一下仓库地址就可以了。&lt;br&gt;原来用的https的仓库，改成ssh的仓库地址就行了。&lt;/p&gt;</summary>
     
     
     
