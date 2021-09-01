@@ -50,7 +50,7 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="hexo next主题高阶配置">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-01T07:19:47.000Z">
-<meta property="article:modified_time" content="2021-09-01T07:30:17.597Z">
+<meta property="article:modified_time" content="2021-09-01T07:35:29.856Z">
 <meta property="article:author" content="Galileo Ko">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next">
@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-09-01 15:19:47 / Modified: 15:30:17" itemprop="dateCreated datePublished" datetime="2021-09-01T15:19:47+08:00">2021-09-01</time>
+              <time title="Created: 2021-09-01 15:19:47 / Modified: 15:35:29" itemprop="dateCreated datePublished" datetime="2021-09-01T15:19:47+08:00">2021-09-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,27 +283,25 @@ var _hmt = _hmt || [];
 <p>(1) 主题配置文件修改<br>修改主题配置文件如下</p>
 <p><code>menu:   home: / || home   #about: /about/ || user   tags: /tags || tags   categories: /categories || th   archives: /archives || archive   #schedule: /schedule/ || calendar   #sitemap: /sitemap.xml || sitemap   #commonweal: /404/ || heartbeat </code></p>
 <h3 id="tags标签配置"><a href="#tags标签配置" class="headerlink" title="tags标签配置"></a>tags标签配置</h3><p>生成标签页</p>
-<hr>
 <p><code>cd &lt;hexo folder&gt; hexo new page tags</code></p>
-<hr>
-<h2 id="成功执行后生成文件-souce-tages-index-md。修改文件内容如下："><a href="#成功执行后生成文件-souce-tages-index-md。修改文件内容如下：" class="headerlink" title="成功执行后生成文件\souce\tages\index.md。修改文件内容如下："></a>成功执行后生成文件<hexo folder>\souce\tages\index.md。修改文件内容如下：</h2><p>title: tages<br>date: 2019-12-27 22:15:29<br>type: “tags”              # 添加此行</p>
-<hr>
-<h2 id="此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示"><a href="#此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示" class="headerlink" title="此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示"></a>此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示</h2><p>title: <title><br>date: <date><br>tags: </p>
+<p>成功执行后生成文件<hexo folder>\souce\tages\index.md。修改文件内容如下：</p>
+<p><code>title: tages date: 2019-12-27 22:15:29 type: &quot;tags&quot;              # 添加此行</code></p>
+<p>此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示</p>
+<p>`title: <title><br>date: <date><br>tags: </p>
 <ul>
 <li><tags1></li>
 <li><tags2></li>
-<li><tags3></li>
+<li><tags3>`</li>
 </ul>
-<hr>
 <h3 id="categories分类配置"><a href="#categories分类配置" class="headerlink" title="categories分类配置"></a>categories分类配置</h3><p>生成分类页</p>
-<p>cd <hexo folder><br>hexo new page categories</p>
-<h2 id="成功执行后生成文件-souce-categories-index-md。修改文件内容如下："><a href="#成功执行后生成文件-souce-categories-index-md。修改文件内容如下：" class="headerlink" title="成功执行后生成文件\souce\categories\index.md。修改文件内容如下："></a>成功执行后生成文件<hexo folder>\souce\categories\index.md。修改文件内容如下：</h2><p>title: categories<br>date: 2019-12-27 22:15:29<br>type: “categories”              # 添加此行</p>
-<hr>
-<h2 id="此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示"><a href="#此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示" class="headerlink" title="此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示"></a>此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示</h2><p>title: <title><br>date: <date><br>categories: </p>
+<p><code>cd &lt;hexo folder&gt; hexo new page categories</code></p>
+<p>成功执行后生成文件<hexo folder>\souce\categories\index.md。修改文件内容如下：</p>
+<p><code>title: categories date: 2019-12-27 22:15:29 type: &quot;categories&quot;              # 添加此行</code></p>
+<p>此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示</p>
+<p>`title: <title><br>date: <date><br>categories: </p>
 <ul>
-<li><categories1></li>
+<li><categories1>`</li>
 </ul>
-<hr>
 <h3 id="头像配置"><a href="#头像配置" class="headerlink" title="头像配置"></a>头像配置</h3><p>此处为侧边栏加入头像，修改主题配置文件如下：</p>
 <p><code>avatar:   #Replace the default image and set the url here.   url: &lt;avatar image url&gt;</code></p>
 <h3 id="在侧边栏以及顶端显示当前阅读进度"><a href="#在侧边栏以及顶端显示当前阅读进度" class="headerlink" title="在侧边栏以及顶端显示当前阅读进度"></a>在侧边栏以及顶端显示当前阅读进度</h3><p>修改主题配置文件如下：</p>
@@ -324,8 +322,10 @@ var _hmt = _hmt || [];
 </ol>
 <p><code>symbols_count_time:   symbols: true   time: true   total_symbols: true   total_time: true</code><br>(3) 主题配置文件<br>修改主题配置文件如下：</p>
 <p><code>symbols_count_time:   separated_meta: true   item_text_post: true   item_text_total: false   awl: 4   wpm: 275</code><br>2. 数学公式支持<br>(1) 主题配置文件<br>next主题支持两种数学渲染引擎，mathjax和katex。<br>由于Latex是最常用的数学排版系统，而mathjax集成了Latex，所以这里开启mathjax，配置如下<br><code> math:   mathjax:     enable: true</code><br>(2) 插件安装<br><code>cd &lt;hexo folder&gt; npm un hexo-renderer-marked npm i hexo-renderer-kramed # or hexo-renderer-pandoc</code><br>(3) 博客内容修改<br>由于数学公式渲染相当消耗资源，所以默认不会给每一篇博客都进行渲染。要开启某一篇博客的数学渲染，需要手动在Front-matter中生命，形式如下：</p>
-<hr>
-<p><code>title: &lt;your blog title&gt; date: &lt;date&gt; tags: categories:  mathjax: true</code><br>–<br>3. 博客评论支持<br>next支持多种第三方评论插件，此处选择最流行的Disqus。</p>
+<p><code>title: &lt;your blog title&gt; date: &lt;date&gt; tags: categories:  mathjax: true</code></p>
+<ol start="3">
+<li>博客评论支持<br>next支持多种第三方评论插件，此处选择最流行的Disqus。</li>
+</ol>
 <p>(1) Disqus配置<br>首先，注册并登陆Disqus<br>其次，按照get started -&gt; I want to install Disqus on my site导航，填写必要信息。重点是记住Website Name。计划选择Basic免费版，platform选择”I don’t see my platform listed, install manually with Universal Code”，然后完成设置。</p>
 <p>(2) 主题配置文件<br>在主题配置文件中，打开Disqus</p>
 <p>`comments:<br>  active: disqus</p>
@@ -338,9 +338,7 @@ var _hmt = _hmt || [];
 <ol>
 <li>文章折叠显示<br>在主页中，所有文章默认全部展开。一般，我们希望文章能够折叠显示，即只显示开头部分，后续部分可点开查看详情。<br>next 7.60版本之前，曾提供auto_excerpt功能，实现自动截断文章形成摘要。然而在7.60版本之后，该功能被移除，官方声明如下<br>next 7.60更新声明<br>若希望继续体验auto_excerpt功能，则需使用next 7.60之前版本。<br>在next 7.60版本之后，文章折叠需要再具体每一篇博客中手动设置。具体方法为在文章中段手动添加<span id="more"></span>。<!-- more -->之前的内容为预览部分，<!-- more -->之后部分会被折叠，需要点开具体文章才可查看详情。</li>
 </ol>
-<hr>
 <p><code>title: &lt;!-- more --&gt;测试 date: &lt;date&gt;</code></p>
-<hr>
 <p>这是在主页中，预览显示的部分。</p>
 <!-- more -->
 <p>这是在主页中，被折叠的部分。<br>四、SEO</p>
@@ -550,7 +548,7 @@ var _hmt = _hmt || [];
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">菜单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tags%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">tags标签配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%8A%9F%E6%89%A7%E8%A1%8C%E5%90%8E%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6-souce-tages-index-md%E3%80%82%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">成功执行后生成文件\souce\tages\index.md。修改文件内容如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E5%90%8E%EF%BC%8C%E5%8F%AF%E5%9C%A8%E5%85%B7%E4%BD%93%E6%AF%8F%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E6%A1%A3%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%EF%BC%8C%E6%96%87%E7%AB%A0%E5%B0%86%E4%BC%9A%E8%87%AA%E5%8A%A8%E8%A2%AB%E6%8C%89%E7%85%A7%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB%E3%80%82%E6%A0%87%E7%AD%BE%E6%B7%BB%E5%8A%A0%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA"><span class="nav-number"></span> <span class="nav-text">此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#categories%E5%88%86%E7%B1%BB%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">categories分类配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E5%8A%9F%E6%89%A7%E8%A1%8C%E5%90%8E%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6-souce-categories-index-md%E3%80%82%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">成功执行后生成文件\souce\categories\index.md。修改文件内容如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E5%90%8E%EF%BC%8C%E5%8F%AF%E5%9C%A8%E5%85%B7%E4%BD%93%E6%AF%8F%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E6%A1%A3%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%EF%BC%8C%E6%96%87%E7%AB%A0%E5%B0%86%E4%BC%9A%E8%87%AA%E5%8A%A8%E8%A2%AB%E6%8C%89%E7%85%A7%E5%88%86%E7%B1%BB%E8%BF%9B%E8%A1%8C%E6%95%B4%E7%90%86%E3%80%82%E5%88%86%E7%B1%BB%E6%B7%BB%E5%8A%A0%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA"><span class="nav-number"></span> <span class="nav-text">此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">头像配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BE%A7%E8%BE%B9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E9%A1%B6%E7%AB%AF%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">在侧边栏以及顶端显示当前阅读进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9B%AE%E5%BD%95%E6%97%B6%E5%88%BB%E5%B1%95%E5%BC%80%EF%BC%8C%E5%B9%B6%E5%85%B3%E9%97%AD%E7%9B%AE%E5%BD%95%E8%87%AA%E5%8A%A8%E7%BC%96%E5%8F%B7"><span class="nav-number">3.</span> <span class="nav-text">保持侧边栏目录时刻展开，并关闭目录自动编号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%BA%95%E9%83%A8Hexo%E4%B8%8ENext%E5%A3%B0%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">移除底部Hexo与Next声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">5.</span> <span class="nav-text">打开移动端自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">6.</span> <span class="nav-text">开启打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">第三方插件设置</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">菜单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tags%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">tags标签配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#categories%E5%88%86%E7%B1%BB%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">categories分类配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">头像配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BE%A7%E8%BE%B9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E9%A1%B6%E7%AB%AF%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6"><span class="nav-number">5.</span> <span class="nav-text">在侧边栏以及顶端显示当前阅读进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9B%AE%E5%BD%95%E6%97%B6%E5%88%BB%E5%B1%95%E5%BC%80%EF%BC%8C%E5%B9%B6%E5%85%B3%E9%97%AD%E7%9B%AE%E5%BD%95%E8%87%AA%E5%8A%A8%E7%BC%96%E5%8F%B7"><span class="nav-number">6.</span> <span class="nav-text">保持侧边栏目录时刻展开，并关闭目录自动编号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%BA%95%E9%83%A8Hexo%E4%B8%8ENext%E5%A3%B0%E6%98%8E"><span class="nav-number">7.</span> <span class="nav-text">移除底部Hexo与Next声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">8.</span> <span class="nav-text">打开移动端自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">9.</span> <span class="nav-text">开启打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="nav-number">10.</span> <span class="nav-text">第三方插件设置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
