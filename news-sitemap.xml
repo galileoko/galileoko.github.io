@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gaolileo.com/about/index.html</loc>
+    
+    <lastmod>2021-09-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gaolileo.com/posts/45958.html</loc>
     
     <lastmod>2021-09-01</lastmod>
@@ -95,13 +102,6 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/tags/next/</loc>
-    <lastmod>2021-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gaolileo.com/tags/git/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -130,7 +130,7 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/tags/markdown/</loc>
+    <loc>http://gaolileo.com/tags/next/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -152,6 +152,13 @@
   
   <url>
     <loc>http://gaolileo.com/tags/JavaScript/</loc>
+    <lastmod>2021-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/markdown/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -216,14 +223,14 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/Markdown/</loc>
+    <loc>http://gaolileo.com/categories/nodejs/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/nodejs/</loc>
+    <loc>http://gaolileo.com/categories/Markdown/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
