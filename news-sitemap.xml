@@ -95,6 +95,13 @@
   </url>
   
   <url>
+    <loc>http://gaolileo.com/tags/next/</loc>
+    <lastmod>2021-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gaolileo.com/tags/prince%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -116,7 +123,7 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/tags/next/</loc>
+    <loc>http://gaolileo.com/tags/git/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -124,13 +131,6 @@
   
   <url>
     <loc>http://gaolileo.com/tags/markdown/</loc>
-    <lastmod>2021-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/git/</loc>
     <lastmod>2021-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
