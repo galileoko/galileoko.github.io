@@ -156,67 +156,9 @@
     
     <category term="nodejs" scheme="http://gaolileo.com/tags/nodejs/"/>
     
-    <category term="JavaScript" scheme="http://gaolileo.com/tags/JavaScript/"/>
-    
     <category term="表达式" scheme="http://gaolileo.com/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Node.js笔记-1：JavaScript的词汇结构</title>
-    <link href="http://gaolileo.com/posts/45135.html"/>
-    <id>http://gaolileo.com/posts/45135.html</id>
-    <published>2021-04-21T09:45:45.000Z</published>
-    <updated>2021-09-01T02:18:11.335Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<ol><li><p>词汇结构，是语法结构的底层，比如变量如何定义，如何写注释，代码声明代码的分割等。</p></li><li><p>字符集，js用的是Unicode，Unicode 是 ASCII 和 Latin-1的超集。js3支持unicode2.1或更高版本，js 5支持需要支持Unicode 3或者更高版本。</p><span id="more"></span></li><li><p>大小写敏感性，js是大小写敏感的，但是html是大小写不敏感的（XHTML是大小写敏感的），这里注意，你可以在html中写onClick,但是在js和XHTML中必须写成onclick。</p></li><li><p>空格，换行，格式符号（如Tab），是被忽略的，但是也有例外。</p></li></ol></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
-    
-    
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css&quot; /&gt;&lt;div class=&quot;.article-gallery&quot;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;词汇结构，是语法结构的底层，比如变量如何定义，如何写注释，代码声明代码的分割等。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;字符集，js用的是Unicode，Unicode 是 ASCII 和 Latin-1的超集。js3支持unicode2.1或更高版本，js 5支持需要支持Unicode 3或者更高版本。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="nodejs" scheme="http://gaolileo.com/categories/nodejs/"/>
-    
-    
-    <category term="nodejs" scheme="http://gaolileo.com/tags/nodejs/"/>
-    
-    <category term="词汇结构" scheme="http://gaolileo.com/tags/%E8%AF%8D%E6%B1%87%E7%BB%93%E6%9E%84/"/>
-    
     <category term="JavaScript" scheme="http://gaolileo.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo更换主题</title>
-    <link href="http://gaolileo.com/posts/43768.html"/>
-    <id>http://gaolileo.com/posts/43768.html</id>
-    <published>2021-04-21T08:28:02.000Z</published>
-    <updated>2021-09-01T02:17:19.955Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>prince主题实在是太不好用了，搞了两天也没有找到about页面404的问题找到。直接更换了next主题。<br>决定在next的主题上开始捣鼓新的样式。</p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css&quot; /&gt;&lt;div class=&quot;.article</summary>
-      
-    
-    
-    
-    <category term="hexo" scheme="http://gaolileo.com/categories/hexo/"/>
-    
-    
-    <category term="hexo" scheme="http://gaolileo.com/tags/hexo/"/>
-    
-    <category term="prince主题" scheme="http://gaolileo.com/tags/prince%E4%B8%BB%E9%A2%98/"/>
-    
-    <category term="about" scheme="http://gaolileo.com/tags/about/"/>
-    
-    <category term="next主题" scheme="http://gaolileo.com/tags/next%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
