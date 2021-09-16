@@ -6,7 +6,7 @@
   <link href="http://gaolileo.com/atom.xml" rel="self"/>
   
   <link href="http://gaolileo.com/"/>
-  <updated>2021-09-01T12:41:34.511Z</updated>
+  <updated>2021-09-16T11:45:21.772Z</updated>
   <id>http://gaolileo.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于元宇宙、NFT、区块链、AR/VR、AI等的一点看法</title>
+    <link href="http://gaolileo.com/posts/6382.html"/>
+    <id>http://gaolileo.com/posts/6382.html</id>
+    <published>2021-09-16T11:40:23.000Z</published>
+    <updated>2021-09-16T11:45:21.772Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>虚拟世界都是现实世界的投影。<br>仔细品。</p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+    
+    
+    <summary type="html">关于元宇宙、NFT、区块链、AR/VR、AI等的一点看法</summary>
+    
+    
+    
+    <category term="元宇宙" scheme="http://gaolileo.com/categories/%E5%85%83%E5%AE%87%E5%AE%99/"/>
+    
+    
+    <category term="宇宙" scheme="http://gaolileo.com/tags/%E5%AE%87%E5%AE%99/"/>
+    
+    <category term="NFT" scheme="http://gaolileo.com/tags/NFT/"/>
+    
+    <category term="区块链" scheme="http://gaolileo.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="AR/VR" scheme="http://gaolileo.com/tags/AR-VR/"/>
+    
+    <category term="AI" scheme="http://gaolileo.com/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>做英文网站赚Google adsense美元的技巧和真理（长文好文）</title>
@@ -138,11 +167,11 @@
   </entry>
   
   <entry>
-    <title>Node.js笔记-2：JavaScript表达式</title>
+    <title>Node.js笔记：JavaScript表达式</title>
     <link href="http://gaolileo.com/posts/24293.html"/>
     <id>http://gaolileo.com/posts/24293.html</id>
     <published>2021-04-21T09:55:04.000Z</published>
-    <updated>2021-09-01T02:17:04.645Z</updated>
+    <updated>2021-09-09T03:24:58.731Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p>在语法概念中，运算符属于词，表达式属于短语。表达式由一个或多个运算符、操作数组成的运算式。表达式的功能是执行计算，并返回一个值。</p><span id="more"></span><h1 id="表达式的形式"><a href="#表达式的形式" class="headerlink" title="表达式的形式"></a>表达式的形式</h1><p>表达式是一个比较富有弹性的运算单元。简单的表达式就是一个直接量、常量或变量。例如：</p><blockquote><p>1  //数值直接量，计算后返回数值 1<br>“string”  //字符串直接量，计算后返回字符串“string”<br>false  //布尔直接量，计算后返回布尔值false<br>null  //特殊值直接量，计算后返回直接量null<br>/regexp/  //正则直接量，计算后返回正则表达式对象<br>{a : 1,b : “1”}  //对象直接量，计算后返回对象<br>[1,”1”]  //数组直接量，计算后返回数组<br>function(a,b){return a+b}  //函数直接量，计算后返回函数<br>a  //变量，计算后返回变量的值<br>它们是最原始的表达式，一般很少单独使用。</p></blockquote><p>使用运算符把一个或多个简单的表达式连接起来，可以构成复杂的表达式。复杂的表达式还可以嵌套组成更复杂的表达式。但是，不管表达式的形式多么复杂，最后都要求返回一个唯一的值。</p><h1 id="表达式的类型"><a href="#表达式的类型" class="headerlink" title="表达式的类型"></a>表达式的类型</h1><p>根据功能的不同，表达式可以分为很多类型。常用类型说明如下：</p><h2 id="1-定义表达式，如定义变量、定义函数。"><a href="#1-定义表达式，如定义变量、定义函数。" class="headerlink" title="1) 定义表达式，如定义变量、定义函数。"></a>1) 定义表达式，如定义变量、定义函数。</h2><p><code>var a = []; var f = function()&#123;&#125;;</code></p><h2 id="2-初始化表达式，与定义表达式和赋值表达式常常混用。"><a href="#2-初始化表达式，与定义表达式和赋值表达式常常混用。" class="headerlink" title="2) 初始化表达式，与定义表达式和赋值表达式常常混用。"></a>2) 初始化表达式，与定义表达式和赋值表达式常常混用。</h2><p><code>var a = [1,2]; var o = &#123;x :1,y : 2&#125;;</code></p><h2 id="3-访问表达式"><a href="#3-访问表达式" class="headerlink" title="3) 访问表达式"></a>3) 访问表达式</h2><p><code>console.log([1,2] [1]);  //返回2 console.log((&#123;x : 1,y : 2&#125;).x );  //返回1 console.log((&#123;x : 1,y : 2&#125;) [&quot;x&quot;]);  //返回1</code></p><h2 id="4-调用表达式"><a href="#4-调用表达式" class="headerlink" title="4) 调用表达式"></a>4) 调用表达式</h2><p><code>console.log(function()&#123;return 1;&#125;());  //返回1 console.log([1,3,2].sort());  //返回1,2,3</code></p><h2 id="5-实例化对象表达式"><a href="#5-实例化对象表达式" class="headerlink" title="5) 实例化对象表达式"></a>5) 实例化对象表达式</h2><p><code>console.log(new Object());  //返回实例对象 console.log(new Object);  //返回实例对象</code></p><p>根据运算符的类型，表达式还可以分为：算术表达式、关系表达式、逻辑表达式、赋值表达式等。</p><h1 id="表达式的运算顺序"><a href="#表达式的运算顺序" class="headerlink" title="表达式的运算顺序"></a>表达式的运算顺序</h1><p>表达式可以嵌套组成复杂的表达式。JavaScript在解析时先计算最小单元的表达式，然后把返回值投入到外围表达式（上级表达式）的运算，依次逐级上移。</p><p>表达是严格遵循“从左到右”的顺序执行运算，但是也会受到每个运算符的优先级和结合性的影响。同时，为了控制计算，用户可以通过小括号分组提升子表达式的优先级。</p><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>对于下面这个表达式来说，通过小括号可以把表达式分为 3 组，形成 3个子表达式，每个子表达式又嵌套多层表达式。<br><code>(3-2-1) * (1+2+3) / (2*3*4);</code><br>JavaScript首先计算“3-2-1”子表达式，然后计算“1+2+3”子表达式，接着计算“2<em>3</em>4”子表达式，最后再执行乘法运算和除法运算。其逻辑顺序如下：<br><code>var a = 1+2+3;     b = 2*3*4;     c = 3-2-1;     d = c * a / b;</code></p><h2 id="示例2"><a href="#示例2" class="headerlink" title="示例2"></a>示例2</h2><p>下面这个表达式不容易阅读。<br><code>(a + b &gt; c &amp;&amp; a -b &lt; c || a &gt; b &gt; c)</code><br>使用小括号进行分组优化，则逻辑运算的顺序就非常清楚了，这是一种好的设计习惯。<br><code>((a + b &gt; c) &amp;&amp; ((a - b &lt; c) || (a &gt;b &gt;c)))</code></p><h1 id="表达式的优化"><a href="#表达式的优化" class="headerlink" title="表达式的优化"></a>表达式的优化</h1><p>表达式的优化包括两种方法：</p><ul><li>运算顺序分组优化。</li><li>逻辑运算结构优化。</li></ul><p>下面重点介绍逻辑优化。</p><p>在复杂表达式中，一些不良的逻辑结构与人的思维方式相悖，会影响代码阅读，这时就应该根据人的思维习惯来优化表达式的逻辑结构。</p><p>设计一个筛选学龄人群的表达式。如果使用表达式来描述就是：年龄大于等于 6 岁，且小于 18 岁的人。<br><code>if(age &gt;= 6 &amp;&amp; age &lt; 18)&#123; &#125;</code></p><p>如果再设计一个更复杂的表达式：筛选所有弱势年龄人群，以便在购票时实施半价优惠。如果使用表达式来描述，就是年龄大于等于 6 岁，且小于 18 岁，或者年龄大于等于 65 岁的人。<br><code>if(age &gt;= 6 &amp;&amp; age &lt; 18 || age &gt;= 65)&#123; &#125;</code></p><p>从逻辑上分析，上面表达式没有错误；但是在结构上分析就比较紊乱。为此先使用小括号对逻辑结构进行分组，以便于阅读。<br><code>if((age &gt;= 6 &amp;&amp; age &lt;18) || age &gt;= 65)&#123; &#125;</code></p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
     
