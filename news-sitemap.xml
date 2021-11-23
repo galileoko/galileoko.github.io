@@ -123,6 +123,27 @@
   </url>
   
   <url>
+    <loc>http://gaolileo.com/tags/nodejs/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/JavaScript/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gaolileo.com/tags/%E5%AE%87%E5%AE%99/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -152,69 +173,6 @@
   
   <url>
     <loc>http://gaolileo.com/tags/AI/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/nodejs/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/JavaScript/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/%E6%8A%96%E9%9F%B3/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/ffmpeg/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/youtube/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/yutube-dl/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/%E8%8B%B1%E6%96%87%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaolileo.com/tags/Google-Adsense/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -255,6 +213,48 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://gaolileo.com/tags/%E8%8B%B1%E6%96%87%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/Google-Adsense/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/%E6%8A%96%E9%9F%B3/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/ffmpeg/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/youtube/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/tags/yutube-dl/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -272,13 +272,6 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/%E5%85%83%E5%AE%87%E5%AE%99/</loc>
-    <lastmod>2021-11-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gaolileo.com/categories/nodejs/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
@@ -286,7 +279,14 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/%E8%A7%86%E9%A2%91%E5%8F%B7/</loc>
+    <loc>http://gaolileo.com/categories/%E5%85%83%E5%AE%87%E5%AE%99/</loc>
+    <lastmod>2021-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -300,7 +300,7 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/</loc>
+    <loc>http://gaolileo.com/categories/%E8%A7%86%E9%A2%91%E5%8F%B7/</loc>
     <lastmod>2021-11-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
