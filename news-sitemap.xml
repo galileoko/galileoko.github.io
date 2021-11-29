@@ -419,14 +419,84 @@
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/Hexo/</loc>
+    <loc>http://gaolileo.com/categories/Github/</loc>
     <lastmod>2021-11-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://gaolileo.com/categories/Hexo/Github/</loc>
+    <loc>http://gaolileo.com/categories/nodejs/Coding-%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/hexo/Hexo-%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/Markdown/Hexo-%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/Niche/Niche-%E5%88%A9%E5%9F%BA%E7%AB%99/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/%E5%85%83%E5%AE%87%E5%AE%99/Points-%E7%9C%8B%E6%B3%95/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/about-china/Locals-News-%E6%9C%AC%E5%9C%B0%E4%BA%BA%E6%96%B0%E9%97%BB/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/covid-19-news/Locals-News-%E6%9C%AC%E5%9C%B0%E4%BA%BA%E6%96%B0%E9%97%BB/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/Sharing-%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/%E8%A7%86%E9%A2%91%E5%8F%B7/video-%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/Github/Hexo/</loc>
+    <lastmod>2021-11-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaolileo.com/categories/Github/Hexo/Hexo-%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-11-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

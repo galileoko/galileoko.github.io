@@ -30,9 +30,11 @@
     
     
     
-    <category term="Hexo" scheme="http://gaolileo.com/categories/Hexo/"/>
+    <category term="Github" scheme="http://gaolileo.com/categories/Github/"/>
     
-    <category term="Github" scheme="http://gaolileo.com/categories/Hexo/Github/"/>
+    <category term="Hexo" scheme="http://gaolileo.com/categories/Github/Hexo/"/>
+    
+    <category term="Hexo 博客" scheme="http://gaolileo.com/categories/Github/Hexo/Hexo-%E5%8D%9A%E5%AE%A2/"/>
     
     
     <category term="Hexo" scheme="http://gaolileo.com/tags/Hexo/"/>
@@ -61,9 +63,11 @@
     
     
     
-    <category term="Hexo" scheme="http://gaolileo.com/categories/Hexo/"/>
+    <category term="Github" scheme="http://gaolileo.com/categories/Github/"/>
     
-    <category term="Github" scheme="http://gaolileo.com/categories/Hexo/Github/"/>
+    <category term="Hexo" scheme="http://gaolileo.com/categories/Github/Hexo/"/>
+    
+    <category term="Hexo 博客" scheme="http://gaolileo.com/categories/Github/Hexo/Hexo-%E5%8D%9A%E5%AE%A2/"/>
     
     
     <category term="Hexo" scheme="http://gaolileo.com/tags/Hexo/"/>
@@ -94,6 +98,8 @@
     
     <category term="covid-19 news" scheme="http://gaolileo.com/categories/covid-19-news/"/>
     
+    <category term="Locals News 本地人新闻" scheme="http://gaolileo.com/categories/covid-19-news/Locals-News-%E6%9C%AC%E5%9C%B0%E4%BA%BA%E6%96%B0%E9%97%BB/"/>
+    
     
     <category term="coronavirus" scheme="http://gaolileo.com/tags/coronavirus/"/>
     
@@ -116,6 +122,8 @@
     
     
     <category term="about china" scheme="http://gaolileo.com/categories/about-china/"/>
+    
+    <category term="Locals News 本地人新闻" scheme="http://gaolileo.com/categories/about-china/Locals-News-%E6%9C%AC%E5%9C%B0%E4%BA%BA%E6%96%B0%E9%97%BB/"/>
     
     
     <category term="China" scheme="http://gaolileo.com/tags/China/"/>
@@ -141,6 +149,8 @@
     
     
     <category term="音乐分享" scheme="http://gaolileo.com/categories/%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/"/>
+    
+    <category term="Sharing 分享" scheme="http://gaolileo.com/categories/%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/Sharing-%E5%88%86%E4%BA%AB/"/>
     
     
     <category term="海朋森" scheme="http://gaolileo.com/tags/%E6%B5%B7%E6%9C%8B%E6%A3%AE/"/>
@@ -171,6 +181,8 @@
     
     <category term="元宇宙" scheme="http://gaolileo.com/categories/%E5%85%83%E5%AE%87%E5%AE%99/"/>
     
+    <category term="Points 看法" scheme="http://gaolileo.com/categories/%E5%85%83%E5%AE%87%E5%AE%99/Points-%E7%9C%8B%E6%B3%95/"/>
+    
     
     <category term="宇宙" scheme="http://gaolileo.com/tags/%E5%AE%87%E5%AE%99/"/>
     
@@ -200,6 +212,8 @@
     
     <category term="Niche" scheme="http://gaolileo.com/categories/Niche/"/>
     
+    <category term="Niche 利基站" scheme="http://gaolileo.com/categories/Niche/Niche-%E5%88%A9%E5%9F%BA%E7%AB%99/"/>
+    
     
     <category term="英文网站" scheme="http://gaolileo.com/tags/%E8%8B%B1%E6%96%87%E7%BD%91%E7%AB%99/"/>
     
@@ -222,6 +236,8 @@
     
     
     <category term="hexo" scheme="http://gaolileo.com/categories/hexo/"/>
+    
+    <category term="Hexo 博客" scheme="http://gaolileo.com/categories/hexo/Hexo-%E5%8D%9A%E5%AE%A2/"/>
     
     
     <category term="hexo" scheme="http://gaolileo.com/tags/hexo/"/>
@@ -246,6 +262,8 @@
     
     <category term="hexo" scheme="http://gaolileo.com/categories/hexo/"/>
     
+    <category term="Hexo 博客" scheme="http://gaolileo.com/categories/hexo/Hexo-%E5%8D%9A%E5%AE%A2/"/>
+    
     
     <category term="hexo" scheme="http://gaolileo.com/tags/hexo/"/>
     
@@ -268,6 +286,8 @@
     
     
     <category term="视频号" scheme="http://gaolileo.com/categories/%E8%A7%86%E9%A2%91%E5%8F%B7/"/>
+    
+    <category term="video 视频剪辑" scheme="http://gaolileo.com/categories/%E8%A7%86%E9%A2%91%E5%8F%B7/video-%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/"/>
     
     
     <category term="抖音" scheme="http://gaolileo.com/tags/%E6%8A%96%E9%9F%B3/"/>
@@ -300,6 +320,8 @@
     
     <category term="Markdown" scheme="http://gaolileo.com/categories/Markdown/"/>
     
+    <category term="Hexo 博客" scheme="http://gaolileo.com/categories/Markdown/Hexo-%E5%8D%9A%E5%AE%A2/"/>
+    
     
     <category term="markdown" scheme="http://gaolileo.com/tags/markdown/"/>
     
@@ -320,6 +342,8 @@
     
     
     <category term="nodejs" scheme="http://gaolileo.com/categories/nodejs/"/>
+    
+    <category term="Coding 编码" scheme="http://gaolileo.com/categories/nodejs/Coding-%E7%BC%96%E7%A0%81/"/>
     
     
     <category term="nodejs" scheme="http://gaolileo.com/tags/nodejs/"/>
