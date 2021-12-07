@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Galileo Ko</title>
+  <title>谷雨</title>
   
-  <subtitle>Locals tell local stories</subtitle>
+  <subtitle>保持幻想，制造量变</subtitle>
   <link href="http://gaolileo.com/atom.xml" rel="self"/>
   
   <link href="http://gaolileo.com/"/>
@@ -10,7 +10,7 @@
   <id>http://gaolileo.com/</id>
   
   <author>
-    <name>Galileo Ko</name>
+    <name>谷雨</name>
     
   </author>
   
