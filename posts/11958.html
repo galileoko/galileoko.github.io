@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script data-ad-client="ca-pub-9755477551091481" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gaolileo.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Next主题更多配置">
+<meta property="og:url" content="http://gaolileo.com/posts/11958.html">
+<meta property="og:site_name" content="Galileo Ko">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-01T07:19:47.000Z">
+<meta property="article:modified_time" content="2021-09-01T07:54:10.657Z">
+<meta property="article:author" content="GK">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://gaolileo.com/posts/11958.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo Next主题更多配置 | Galileo Ko</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLJ9HSB3S"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9NLJ9HSB3S');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c486c1de56e617270b3c991f6b867b66";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script data-ad-client="ca-pub-9755477551091481" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<link rel="alternate" href="/atom.xml" title="Galileo Ko" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Galileo Ko</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">保持幻想，制造量变</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://gaolileo.com/posts/11958.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="GK">
+      <meta itemprop="description" content="我们不能失去信仰">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Galileo Ko">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo Next主题更多配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-01 15:19:47 / Modified: 15:54:10" itemprop="dateCreated datePublished" datetime="2021-09-01T15:19:47+08:00">2021-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/Hexo-%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">Hexo 博客</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<h3 id="next主题配置"><a href="#next主题配置" class="headerlink" title="next主题配置"></a>next主题配置</h3><p>next的主题配置文件，位于<hexo folder>\themes\next_config.yml。<br>注意区分站点配置文件和主题配置文件。<br>位于<hexo folder>_config.yml的为站点配置文件。<br>位于<hexo folder>\themes\next_config.yml的为主题配置文件。</p>
+<span id="more"></span>
+<p>next有四种风格：Muse(默认)，Mist，Pisces，Gemini。<br>这里将风格改为Gemini，修改主题配置文件如下</p>
+<pre><code>`#scheme: Mist
+#scheme: Pisces
+scheme: Gemini`
+</code></pre>
+<h3 id="菜单配置"><a href="#菜单配置" class="headerlink" title="菜单配置"></a>菜单配置</h3><p>next默认只菜单项中只有home(首页), archieve(归档)。<br>这里打开更多菜单项：tags(标签),categories(分类)。</p>
+<p>(1) 主题配置文件修改<br>修改主题配置文件如下</p>
+<pre><code>`menu:
+  home: / || home
+  #about: /about/ || user
+  tags: /tags || tags
+  categories: /categories || th
+  archives: /archives || archive
+  #schedule: /schedule/ || calendar
+  #sitemap: /sitemap.xml || sitemap
+  #commonweal: /404/ || heartbeat `
+</code></pre>
+<h3 id="tags标签配置"><a href="#tags标签配置" class="headerlink" title="tags标签配置"></a>tags标签配置</h3><p>生成标签页</p>
+<pre><code>`cd &lt;hexo folder&gt;
+hexo new page tags`
+</code></pre>
+<p>成功执行后生成文件<hexo folder>\souce\tages\index.md。修改文件内容如下：</p>
+<pre><code>`title: tages
+date: 2019-12-27 22:15:29
+type: &quot;tags&quot;              # 添加此行`
+</code></pre>
+<p>此后，可在具体每一篇博客文档中添加标签，文章将会自动被按照标签分类。标签添加如下所示</p>
+<h3 id="categories分类配置"><a href="#categories分类配置" class="headerlink" title="categories分类配置"></a>categories分类配置</h3><p>生成分类页</p>
+<pre><code>`cd &lt;hexo folder&gt;
+hexo new page categories`
+</code></pre>
+<p>成功执行后生成文件<hexo folder>\souce\categories\index.md。修改文件内容如下：</p>
+<pre><code>`title: categories
+date: 2019-12-27 22:15:29
+type: &quot;categories&quot;              # 添加此行`
+</code></pre>
+<p>此后，可在具体每一篇博客文档中添加分类，文章将会自动被按照分类进行整理。分类添加如下所示</p>
+<h3 id="头像配置"><a href="#头像配置" class="headerlink" title="头像配置"></a>头像配置</h3><p>此处为侧边栏加入头像，修改主题配置文件如下：</p>
+<pre><code>`avatar:
+  #Replace the default image and set the url here.
+  url: &lt;avatar image url&gt;`
+</code></pre>
+<h3 id="在侧边栏以及顶端显示当前阅读进度"><a href="#在侧边栏以及顶端显示当前阅读进度" class="headerlink" title="在侧边栏以及顶端显示当前阅读进度"></a>在侧边栏以及顶端显示当前阅读进度</h3><p>修改主题配置文件如下：</p>
+<pre><code>` back2top:
+  enable: true
+  #Back to top in sidebar.
+  sidebar: false
+  #Scroll percent label in b2t button.
+  scrollpercent: true
+#Reading progress bar
+reading_progress:
+  enable: top
+  #Available values: top | bottom
+  position: top
+  color: &quot;#37c6c0&quot;
+  height: 3px `
+</code></pre>
+<h3 id="保持侧边栏目录时刻展开，并关闭目录自动编号"><a href="#保持侧边栏目录时刻展开，并关闭目录自动编号" class="headerlink" title="保持侧边栏目录时刻展开，并关闭目录自动编号"></a>保持侧边栏目录时刻展开，并关闭目录自动编号</h3><p>修改主题配置文件如下：</p>
+<pre><code>`toc:
+  enable: true
+  #Automatically add list number to toc.
+  number: false
+  #If true, all words will placed on next lines if header width longer then sidebar width.
+  wrap: false
+  #If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: true
+  #Maximum heading depth of generated toc.
+  max_depth: 6`
+</code></pre>
+<h3 id="移除底部Hexo与Next声明"><a href="#移除底部Hexo与Next声明" class="headerlink" title="移除底部Hexo与Next声明"></a>移除底部Hexo与Next声明</h3><p>修改主题配置文件如下：</p>
+<pre><code>`powered:
+  #Hexo link (Powered by Hexo).
+  enable: false
+  #Version info of Hexo after Hexo link (vX.X.X).
+  version: false
+theme:
+  #Theme &amp; scheme info link (Theme - NexT.scheme).
+  enable: false
+  #Version info of NexT after scheme info (vX.X.X).
+  version: false`
+</code></pre>
+<h3 id="打开移动端自适应"><a href="#打开移动端自适应" class="headerlink" title="打开移动端自适应"></a>打开移动端自适应</h3><p>修改主题配置文件如下：</p>
+<p><code>mobile_layout_economy: true</code></p>
+<h3 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h3><p>修改主题配置文件如下：</p>
+<pre><code>`reward_settings:
+  #If true, reward will be displayed in every article by default.
+  enable: true
+  animation: false
+  #comment: Donate comment here.
+reward:
+  wechatpay: &lt;your wechatpay reward image link&gt;
+  alipay: &lt;your alipay reward image link&gt;
+  #bitcoin: &lt;your bitcoin reward image link&gt;`
+</code></pre>
+<h3 id="第三方插件设置"><a href="#第三方插件设置" class="headerlink" title="第三方插件设置"></a>第三方插件设置</h3><ol>
+<li><p>文章字数统计及阅读时长估计<br>(1) 插件安装</p>
+<pre><code> `cd &lt;hexo folder&gt;
+ npm install hexo-symbols-count-time`
+</code></pre>
+</li>
+</ol>
+<p>(2) 站点配置文件<br>修改站点配置文件如下：</p>
+<pre><code>`symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true`
+</code></pre>
+<p>(3) 主题配置文件<br>修改主题配置文件如下：</p>
+<pre><code>`symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: false
+  awl: 4
+  wpm: 275`
+</code></pre>
+<ol start="2">
+<li><p>数学公式支持<br>(1) 主题配置文件<br>next主题支持两种数学渲染引擎，mathjax和katex。<br>由于Latex是最常用的数学排版系统，而mathjax集成了Latex，所以这里开启mathjax，配置如下</p>
+<pre><code> `math:
+   mathjax:
+     enable: true`
+</code></pre>
+</li>
+</ol>
+<p>(2) 插件安装</p>
+<pre><code>`cd &lt;hexo folder&gt;
+npm un hexo-renderer-marked
+npm i hexo-renderer-kramed # or hexo-renderer-pandoc`
+</code></pre>
+<p>(3) 博客内容修改<br>由于数学公式渲染相当消耗资源，所以默认不会给每一篇博客都进行渲染。要开启某一篇博客的数学渲染，需要手动在Front-matter中生命，形式如下：</p>
+<pre><code>`title: &lt;your blog title&gt;
+date: &lt;date&gt;
+tags:
+categories: 
+mathjax: true`
+</code></pre>
+<ol start="3">
+<li>博客评论支持<br>next支持多种第三方评论插件，此处选择最流行的Disqus。</li>
+</ol>
+<p>(1) Disqus配置<br>首先，注册并登陆Disqus<br>其次，按照get started -&gt; I want to install Disqus on my site导航，填写必要信息。重点是记住Website Name。计划选择Basic免费版，platform选择”I don’t see my platform listed, install manually with Universal Code”，然后完成设置。</p>
+<p>(2) 主题配置文件<br>在主题配置文件中，打开Disqus</p>
+<pre><code>`comments:
+  active: disqus
+disqus:
+  enable: true
+  shortname: &lt;your Website Name&gt;
+  count: true`
+</code></pre>
+<ol start="4">
+<li><p>网站流量分析<br>(1) 谷歌流量分析<br>首先，注册并登陆Google Analysis<br>其次，按照侧边栏 -&gt; 设置 -&gt; 媒体资源 -&gt; 跟踪信息 -&gt; 跟踪代码导航，找到并拷贝“跟踪代码”。<br>最后，在主题配置文件中，粘贴跟踪代码。</p>
+<pre><code> `google_analytics:
+   tracking_id: &lt;your tracking ID&gt;`
+</code></pre>
+</li>
+</ol>
+<p>(2) 百度流量分析（国内）<br>首先，注册并登陆百度统计<br>其次，按照我的报告 -&gt; 管理 -&gt; 代码获取导航，找到新版统计代码获取，其格式一般如下</p>
+<pre><code>`&lt;script&gt;
+var _hmt = _hmt || [];
+(function() &#123;
+  var hm = document.createElement(&quot;script&quot;);
+  hm.src = &quot;https://hm.baidu.com/hm.js?&lt;your baidu tracking code&gt;&quot;;
+  var s = document.getElementsByTagName(&quot;script&quot;)[0];`
+</code></pre>
+<p>拷贝部分，并粘贴到主题配置文件中<br><code>baidu_analytics: &lt;your baidu tracking code&gt;</code><br>5. 搜索功能<br>Next提供多种搜索功能，这里介绍本地搜索。本地搜索不需要第三方插件，但仍需安装软件包，特点是操作简单但搜索效果一般，不过已经能够满足基本的搜索需求。<br>Next同样提供基于第三方插件的搜索服务，如Algolia搜索和Swiftype搜索，但由于目前版本还不稳定，暂时不多做介绍。</p>
+<p>(1) 安装</p>
+<pre><code>`cd &lt;hexo folder&gt;
+npm install hexo-generator-searchdb --save`
+</code></pre>
+<p>(2) 站点配置文件<br>设置如下</p>
+<pre><code>`#local search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000`
+</code></pre>
+<p>(3) 主题配置文件<br>设置如下</p>
+<pre><code>`#Local search
+local_search:
+  enable: true`
+</code></pre>
+<p>三、博客内容设置</p>
+<ol>
+<li><p>文章折叠显示<br>在主页中，所有文章默认全部展开。一般，我们希望文章能够折叠显示，即只显示开头部分，后续部分可点开查看详情。<br>next 7.60版本之前，曾提供auto_excerpt功能，实现自动截断文章形成摘要。然而在7.60版本之后，该功能被移除，官方声明如下<br>next 7.60更新声明<br>若希望继续体验auto_excerpt功能，则需使用next 7.60之前版本。<br>在next 7.60版本之后，文章折叠需要再具体每一篇博客中手动设置。具体方法为在文章中段手动添加<code>&lt;!-- more --&gt;。&lt;!-- more --&gt;</code>之前的内容为预览部分，<code>&lt;!-- more --&gt;</code>之后部分会被折叠，需要点开具体文章才可查看详情。</p>
+<pre><code> `title: &lt;!-- more --&gt;测试
+ date: &lt;date&gt;`
+</code></pre>
+</li>
+</ol>
+<p>这是在主页中，预览显示的部分。<br>    <code>&lt;!-- more --&gt;</code><br>这是在主页中，被折叠的部分。<br>四、SEO</p>
+<ol>
+<li><p>主题配置文件<br>在主题配置文件中，打开SEO和exlurl，优化SEO效果。</p>
+<pre><code> `#Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
+ seo: true
+ #Automatically add external URL with Base64 encrypt &amp; decrypt.
+</code></pre>
+<p> exturl: true`</p>
+</li>
+<li><p>谷歌SEO配置<br>(1) 登录谷歌站点管理工具<br>谷歌站点管理工具</p>
+</li>
+</ol>
+<p>(2) 获取google site verification code<br>按照导航输入博客网址，进入Google search console。<br>按照”侧边栏 -&gt; 设置 -&gt; 所有权验证 -&gt; html标记”导航，找到HTML元标记，格式如下所示。</p>
+<meta name="google-site-verification" content="<your google site verification code>" />
+(3) 主题配置文件
+粘贴google site verification code到主题配置文件中
+
+<pre><code>`#Google Webmaster tools verification.
+#See: https://www.google.com/webmasters
+google_site_verification: &lt;your google site verification code&gt;`
+</code></pre>
+<ol start="3">
+<li>百度SEO配置<br>(1) 登录百度站点管理工具<br>百度站点管理工具</li>
+</ol>
+<p>(2) 获取baidu site verification code<br>按照导航输入博客网址。<br>注意，此处协议头必须选择https而不是http，否则会导致无法验证。<br>验证网站是选择HTML标签验证，得到HTML标签验证，格式如下所示</p>
+<meta name="baidu-site-verification" content="<your baidu site verification code>" />
+(3) 主题配置文件
+粘贴google site verification code到主题配置文件中，并开启百度推送
+
+<pre><code>`#Baidu Webmaster tools verification.
+#See: https://ziyuan.baidu.com/site
+baidu_site_verification: &lt;your baidu site verification code&gt;`
+</code></pre>
+<ol start="4">
+<li><p>确认搜索引擎收录<br>在谷歌/百度搜索引擎中，搜索site:<your blog url>,若出现结果，则证明被成功收录。<br>注意，从通过验证，到被成功收录，有一定时间延迟。特别是百度，延迟时间有时长达一个月。所以若站点管理页面显示通过验证，却未能在搜索引擎中查到结果，可过一段时间再尝试。</p>
+</li>
+<li><p>提交站点地图<br>站点地图是一种文件，您可以通过该文件列出您网站上的网页，从而将您网站内容的组织架构告知Google和其他搜索引擎。<br>通过提交站点地图，可增加SEO效果和搜索引擎收录效率。</p>
+</li>
+</ol>
+<p>(1) 安装插件</p>
+<pre><code>`cd &lt;hexo folder&gt;
+npm install hexo-generator-sitemap --save
+npm install hexo-generator-baidu-sitemap --save`
+</code></pre>
+<p>(2) 站点配置文件<br>在站点配置文件中，添加以下内容</p>
+<pre><code>`#自动生成sitemap`
+`sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml`
+</code></pre>
+<p>(3) 重新部署博客，生成站点地图<br>部署博客</p>
+<pre><code>`cd &lt;hexo folder&gt;
+hexo clean
+hexo d -g`
+</code></pre>
+<p>查看链接<your blog url>/sitemap.xml和<your blog url>/baidusitemap.xml，验证站点地图生成成功。<br>(4) 提交谷歌站点地图<br>谷歌站点管理工具<br>按照”侧边栏-站点地图”导航，输入站点地图的链接<your blog url>/sitemap.xml，完成谷歌站点地图的提交。</p>
+<p>(5) 提交百度站点地图<br>百度提供多种站点地图提交方式。<br>第一是手动提交。<br>按照”侧边栏 -&gt; 站点地图 -&gt; 手动提交”导航，输入百度站点地图链接<your blog url>/baidusitemap.xml，提交即可。<br>第二是自动提交。此功能已被集成到next主题中，可以很方便地开启。<br>首先在next主题配置文件中，开启百度主动推送</p>
+<blockquote>
+<p><code>#Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.</code><br><code>baidu_push: true</code></p>
+</blockquote>
+<p>按照”侧边栏-站点地图-自动提交-自动推送”导航，复制”自动推送工具代码”。将其复制到<hexo folder>\themes\next\layout_third-party\baidu-push.swig中，具体格式如下所示</p>
+<blockquote>
+<p><code>&#123;%- if theme.baidu_push %&#125;</code><br> <code>&lt;your 自动推送工具代码&gt;</code><br><code>&#123;%- endif %&#125;</code></p>
+</blockquote>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/46749.html" rel="bookmark">Hexo部署出现err:error:spawn failed和authorization failed解决办法</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="GK WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>GK
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://gaolileo.com/posts/11958.html" title="Hexo Next主题更多配置">http://gaolileo.com/posts/11958.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/next/" rel="tag"># next</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/46749.html" rel="prev" title="Hexo部署出现err:error:spawn failed和authorization failed解决办法">
+      <i class="fa fa-chevron-left"></i> Hexo部署出现err:error:spawn failed和authorization failed解决办法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/41154.html" rel="next" title="分享几张近期钟爱的专辑">
+      分享几张近期钟爱的专辑 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">菜单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tags%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">tags标签配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#categories%E5%88%86%E7%B1%BB%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">categories分类配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">头像配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BE%A7%E8%BE%B9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E9%A1%B6%E7%AB%AF%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6"><span class="nav-number">5.</span> <span class="nav-text">在侧边栏以及顶端显示当前阅读进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9B%AE%E5%BD%95%E6%97%B6%E5%88%BB%E5%B1%95%E5%BC%80%EF%BC%8C%E5%B9%B6%E5%85%B3%E9%97%AD%E7%9B%AE%E5%BD%95%E8%87%AA%E5%8A%A8%E7%BC%96%E5%8F%B7"><span class="nav-number">6.</span> <span class="nav-text">保持侧边栏目录时刻展开，并关闭目录自动编号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%BA%95%E9%83%A8Hexo%E4%B8%8ENext%E5%A3%B0%E6%98%8E"><span class="nav-number">7.</span> <span class="nav-text">移除底部Hexo与Next声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">8.</span> <span class="nav-text">打开移动端自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">9.</span> <span class="nav-text">开启打赏功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="nav-number">10.</span> <span class="nav-text">第三方插件设置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GK"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">GK</p>
+  <div class="site-description" itemprop="description">我们不能失去信仰</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a rel="external nofollow" href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a rel="external nofollow" href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a rel="external nofollow" href="/tags/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://mp.weixin.qq.com/s/uQjCHWmCESCS1_wAUrqb_g" title="公众号 → https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;uQjCHWmCESCS1_wAUrqb_g" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>公众号</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCxCYe7nobSnBtwBey0E3lgQ" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCxCYe7nobSnBtwBey0E3lgQ" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.localstell.com/" title="本地说 → https:&#x2F;&#x2F;www.localstell.com&#x2F;" rel="noopener" target="_blank"><i class="fab fa-grav fa-fw"></i>本地说</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=%E8%B0%B7%E9%9B%A8" title="关键词 → https:&#x2F;&#x2F;sp0.baidu.com&#x2F;5a1Fazu8AA54nxGko9WTAnF6hhy&#x2F;su?wd&#x3D;谷雨" rel="noopener" target="_blank"><i class="fa fa-bug fa-fw"></i>关键词</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-cn" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GK</span>
+</div>
+<!--
+-->
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-612f79b989217f36" async="async"></script>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
+</body>
+</html>

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤫</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="has-text-centered pb-5" style="color:#626f9e">
+            <p class="is-size-5">我只是一个偶像派歌手</p>
+        </div>
+        <div class="container">
+            <div class="box">
+                <small id="AlbumInfo">《Album》</small><br>
+                <audio id="audioPlayer" class="is-hidden" controls ontimeupdate="MusicPlayer.updateTime()"
+                    onloadedmetadata="MusicPlayer.updateTotalTime()">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="media">
+                    <div class="media-content">
+                        <figure class="image is-256x256 is-centered is-square">
+                            <img id="albumCover" src="" alt="Album Cover">
+                            <div class="record-center"></div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="content has-text-centered">
+                    <p>
+                        <strong id="songName">Song Name</strong><br>
+                        <small id="artistAlbumInfo">Artist</small>
+                    </p>
+                </div>
+                <div id="timeDisplay" class="has-text-centered">
+                    <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                </div>
+                <progress id="progressBar" class="progress is-link" value="0" max="100" onclick="MusicPlayer.seek(event)"></progress>
+                <div class="buttons is-centered">
+                    <button class="button is-link" onclick="MusicPlayer.playRandomSong()">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button class="button is-link" onclick="MusicPlayer.playPrevious()">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="button is-link" onclick="MusicPlayer.playPause()">
+                        <i id="playPauseIcon" class="fas fa-play"></i>
+                    </button>
+                    <button class="button is-link" onclick="MusicPlayer.playNext()">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                    <button class="button is-link" onclick="MusicPlayer.showPlaylist()">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="overlay" class="modal">
+                <div class="modal-background" onclick="MusicPlayer.closePlaylist()"></div>
+                <div class="modal-content">
+                    <div class="box" style="overflow-y: scroll;padding:1.25rem 0.75rem">
+                        <h2 class="title is-4 has-text-centered">Playlist</h2>
+                        <ul id="playlistItems" class="menu-list is-size-6"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="has-text-centered pb-6" style="color:#626f9e">
+            <p class="is-size-7">Empowered by GK</p>
+        </div>
+    </section>
+    <style>
+        html{
+            height: 100vh;
+            overflow:hidden;
+            background-image: linear-gradient(to top, #030e22 0%, #141f32 100%);
+        }
+        body, .section {
+            height: 100vh;
+        }
+        .section{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow: hidden;
+        }
+        .media-content {
+            padding: 20px;
+        }
+        #timeDisplay {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        #progressBar {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #albumCover {
+            border-radius: 50%;
+            border: 50px solid #000;
+            box-shadow: 0 0 10px 10px #d8d8d8;
+            object-fit: cover;
+        }
+        .rotate {
+            animation: spin 20s linear infinite; 
+            transform-origin: center center;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #overlay {
+            position: fixed;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: top 0.3s ease-out; /* 添加过渡效果 */
+        }
+        #overlay.is-active {
+            top: 0 !important; /* 使用 !important 提高优先级 */
+        }
+        .modal{
+            display:block;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            margin: auto;
+            height: 100vh;
+            max-height: 100vh;
+            background-image: linear-gradient(to top, #030e22 0%, #141f32 100%);
+        }
+        @media screen and (max-width: 768px){
+            .media-content {
+                overflow: hidden;
+            }
+        }
+        @media screen and (min-width: 769px){
+            .modal-card, .modal-content {
+                width: 100%;
+            }
+        }
+        .menu-list {
+            margin-top: 10px;
+            padding: 0;
+        }
+        .menu-list span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 240px;
+        }
+        .playlist-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #c9c9c9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .playlist-item:hover {
+            background-color: #d5deff;
+        }
+        .is-playing {
+            font-weight: bold;
+            color: #ff4500;
+        }
+        .current-track-icon {
+            margin-right: 8px;
+        }
+        .record-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            border: 4px solid #000;
+        }
+        .progress{
+            height: 0.5rem;
+        }
+        .buttons{
+            margin: 2rem 0;
+        }
+        .buttons:last-child{
+            margin-bottom: 1rem;
+        }
+    </style>
+
+    <script>
+        const MusicPlayer = {
+            musicList: [
+    {
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E9%BB%91%E8%89%B2%E4%BF%A1%E5%B0%81.m4a',
+        name: '黑色信封',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E9%98%BF%E5%85%B0.m4a',
+        name: '阿兰',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E9%9D%92%E6%98%A5.m4a',
+        name: '青春',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E7%A6%BB%E5%A9%9A.m4a',
+        name: '离婚',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E6%AC%A2%E6%84%89.m4a',
+        name: '欢愉',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E8%A2%AB%E7%A6%81%E5%BF%8C%E7%9A%84%E6%B8%B8%E6%88%8F.m4a',
+        name: '被禁忌的游戏',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E5%8D%A1%E5%A4%AB%E5%8D%A1.m4a',
+        name: '卡夫卡',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E7%BD%97%E5%BA%84%E7%9A%84%E5%86%AC%E5%A4%A9.m4a',
+        name: '罗庄的冬天',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E7%BA%A2%E8%89%B2%E6%B0%94%E7%90%83.m4a',
+        name: '红色气球',
+        singer: '某行为不端知名声乐演员',
+        album: '被禁忌的游戏',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/被禁忌的游戏封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E4%BD%A0%E7%A6%BB%E5%BC%80%E4%BA%86%E5%8D%97%E4%BA%AC%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%B2%A1%E6%9C%89%E4%BA%BA%E5%92%8C%E6%88%91%E8%AF%B4%E8%AF%9D.m4a',
+        name: '你离开了南京，从此没有人和我说话',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E8%91%A3%E5%8D%93%E8%B0%A3.m4a',
+        name: '董卓瑶',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%98%A5%E6%9C%AB%E7%9A%84%E5%8D%97%E6%96%B9%E5%9F%8E%E5%B8%82.m4a',
+        name: '春末的南方城市',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%9D%A5%E4%BA%86.m4a',
+        name: '来了',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%B9%BF%E5%9C%BA.m4a',
+        name: '广场',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%9A%A7%E6%98%A7.m4a',
+        name: '暧昧',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%A2%B5%E9%AB%98%E5%85%88%E7%94%9F.m4a',
+        name: '梵高先生',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%83%B3%E8%B5%B7%E4%BA%86%E4%BB%96.m4a',
+        name: '想起了他',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%96%9C.m4a',
+        name: '斜',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/梵高先生-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E5%A6%88%E5%A6%88.m4a',
+        name: '妈妈',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E5%8D%A1%E7%BA%B3%E6%96%AF.m4a',
+        name: '喀纳斯',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E5%92%8C%E4%BD%A0%E5%9C%A8%E4%B8%80%E8%B5%B7.m4a',
+        name: '和你在一起',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E7%BF%81%E5%BA%86%E5%B9%B4%E7%9A%84%E5%85%AD%E8%8B%B1%E9%95%91.m4a',
+        name: '翁庆年的六英镑',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E6%88%91%E4%BB%AC%E4%B8%8D%E8%83%BD%E5%A4%B1%E5%8E%BB%E4%BF%A1%E4%BB%B0%E2%80%94%E2%80%94%E7%8C%AE%E7%BB%99%E5%88%98%E8%89%BA.m4a',
+        name: '我们不能失去信仰-献给刘艺',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E4%BB%96%E4%BB%AC.m4a',
+        name: '他们',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E6%B5%B7%E7%9A%84%E5%A5%B3%E5%84%BF.m4a',
+        name: '海的女儿',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E4%BA%A4%E6%B2%B3.m4a',
+        name: '交河',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E4%BC%9A%E5%A5%BD%E5%90%97.m4a',
+        name: '这个世界会好吗',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://www.lizhinb.com/wp-content/uploads/2023/02/%E4%BA%BA%E6%B0%91%E4%B8%8D%E9%9C%80%E8%A6%81%E8%87%AA%E7%94%B1.m4a',
+        name: '人民不需要自由',
+        singer: '某行为不端知名声乐演员',
+        album: '梵高先生',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/这个世界会好吗.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%84%8F%E5%91%B3.m4a',
+        name: '意味',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E8%8B%8D%E4%BA%95%E7%A9%BA.m4a',
+        name: '苍井空',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E7%BB%93%E5%A9%9A.m4a',
+        name: '结婚',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E9%B8%B5%E9%B8%9F.m4a',
+        name: '鸵鸟',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%A4%A9%E7%A9%BA%E4%B9%8B%E5%9F%8E.m4a',
+        name: '天空之城',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%80%92%E5%BD%B1.m4a',
+        name: '倒影',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E7%88%B1.m4a',
+        name: '爱',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%AE%B6%E4%B9%A1.m4a',
+        name: '家乡',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/1990%E5%B9%B4%E7%9A%84%E6%98%A5%E5%A4%A9.m4a',
+        name: '1990年的春天',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%86%AC%E5%A6%AE%E5%A8%85.m4a',
+        name: '冬妮娅',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E7%BE%8E%E4%B8%BD%E7%9A%84%E6%A2%AD%E7%BD%97%E6%B2%B3.m4a',
+        name: '美丽的梭罗河',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E7%B1%B3%E5%BA%97.m4a',
+        name: '米店',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%80%9D%E5%BF%B5%E8%A7%82%E4%B8%96%E9%9F%B3.m4a',
+        name: '思念观世音',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%86%8D%E8%A7%81.m4a',
+        name: '再见',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%90%AC%E5%A6%88%E5%A6%88%E8%AE%B2%E9%82%A3%E8%BF%87%E5%8E%BB%E7%9A%84%E4%BA%8B%E6%83%85.m4a',
+        name: '听妈妈讲过去的事情',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E5%9C%A8%E9%82%A3%E9%81%A5%E8%BF%9C%E7%9A%84%E5%9C%B0%E6%96%B9.m4a',
+        name: '在那遥远的地方',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E7%88%B8%E7%88%B8%E5%9C%A8%E5%A4%A9%E4%B8%8A%E7%9C%8B%E6%88%91%EF%BC%88%E6%88%91%E7%88%B1%E5%8D%97%E4%BA%AC%E6%9C%AA%E5%8F%91%E8%A1%A8%E6%AD%8C%E6%9B%B2%EF%BC%89.m4a',
+        name: '爸爸在天上看我',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://our334.lizhinb.com/2023/02/%E6%AD%8C%EF%BC%88%E6%88%91%E7%88%B1%E5%8D%97%E4%BA%AC%E6%9C%AA%E5%8F%91%E8%A1%A8%E6%AD%8C%E6%9B%B2%EF%BC%89.m4a',
+        name: '歌',
+        singer: '某行为不端知名声乐演员',
+        album: '我爱南京',
+        pic: 'https://www.lizhinb.com/wp-content/uploads/2023/02/我爱南京-封面.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39b77c794d00010c3e84?auth_key=1704865501-GUIgy7iMopuLTDsnbCZ783jN8IJlsOMlFb6bHanX1DcKFwHOqfeJSxHheNixf0RceeeskENwaFi6wXs3-0-07a0cc1fb2fa5497b16b3160a2b4c333',
+        name: 'Intro',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659cf6b58a433000011069d6?auth_key=1704865359-gaP0jiBiH3mwMbWl75IPWFrtwuqJQQxe4wPH1VxTVQbvjNXui4mFJ4GEVFVpI5xbN2NCpeX9Tkg5e0wN-0-305954dbc2213da74feb9e2619bd3a2d',
+        name: '我用什么把你留住',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39b78a4330000110783f?auth_key=1704865631-CxhyYtkHIN5btfkEGYjh6iGPsaCeKNeEQC8hpMzKTW3JdcCi0GXAxPJ9vRru4BNLlVrAdbcL2MOIWCR5-0-4d0e5c5055c5d3098657d7f04b1386ed',
+        name: '马',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39b75a3b260001df3791?auth_key=1704865543-ILuV3j2yGqDsGhbB2bSXQ74fagcjE0REEXaVTpJrVnKZoQbNeYY4Reu4pdjIvUXbBEmsicxsRtofPTIQ-0-c544fd922328afd78a2f76822d4fb91e',
+        name: '超度我',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659cf9d48a43300001106ace?auth_key=1704865432-XXWHw8sXpIj2EPMuGJ3heTZydAWlOCylJwfT7bmD0U4r3QkKSU1j6LGI5nPUIqn2nomuu2mFLL9nF9An-0-04ff530c49d76622d6b985707dd513cc',
+        name: '没咯',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d8707885bdf000129fa82?auth_key=1704867882-8c6miFfw7NYPTC4b6wJ4ZC3LMptDm7pXFJOHw33UanawSOg7BnMEsUoiEwy3cNQT2CDwTdM6MpMkhEms-0-3731f91ed9c447037949e716823b0407',
+        name: '玉珍',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39b77c794d00010c3e85?auth_key=1704865602-uqtLTchVEbRDql91tV4l1gPdEZnNwnE1edmhxMDZpxgjmfoVOsPZt5AelrRCKERhNJJKCCLwI5NlEC7v-0-a33652db24527f0e23ab29b113dfcf33',
+        name: '春暖花开去见你',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39b7885bdf000129f5bb?auth_key=1704865654-Z028IGHOdyuEEXC9usEvfpiHr31ANBCOobrnXLozVb1D21LcKQSQ6ZW5rqpJApLkV9AsewoVZBVqsp67-0-95fe725d2e8a1d73a59138341869a081',
+        name: '如何',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659cf9d47c794d00010c30fb?auth_key=1704865400-l8kgdFSyloV3DXaQmLG8GOLpYnY9JrgUuvGt5a2BAu68ZYKFAqlZG0tUeawwP4zNO499GvsvY90CJzH7-0-0db9b23252c6c66099fece4ae8a8af9f',
+        name: '兰若度母',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d8707239abc00011611c8?auth_key=1704867853-7bmSBtg3oSGGCgZ4W3piXtS8gYoUEDn8oyuR48dpEgrPr7gIlkuiiHHxpOYxiXC3FDIaBh6XANYgRyN2-0-1eea8013d20ce07a846485fb4a56112d',
+        name: '心静自然凉',
+        singer: '福禄寿',
+        album: '我用什么把你留住',
+        pic: 'https://www.gaodimusic.com/uploads/2022/05/1671718448-41d0e299ca1abeb.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d38c95a3b260001df3749?auth_key=1704865948-8kaR1UpjicoTl3PAwiPnAmKQKuvrj026aJWMx7Nkb9fWhe0sPO978GK4PursqlnRjmZP9iEDPk9HY1qT-0-361f04fdc4dee04d5e10d2b3f943b8c9',
+        name: '哦！乖！',
+        singer: 'Carsick Cars',
+        album: 'Cover',
+        pic: 'https://f4.bcbits.com/img/a3824535687_65',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d390d5a3b260001df374e?auth_key=1704866024-WtJNZSQZ41sdWcAax53ik3WzK5LrYs9m74Z7rUPTEjCcwWvFVp429KbV2N3TZMsj73BwVXKspDAMmuo7-0-622a42b27476fe3826d38845978a4d4c',
+        name: '青春',
+        singer: '请回答1988',
+        album: '请回答1988',
+        pic: 'https://hips.hearstapps.com/hmg-prod/images/back-to-1988-stars-jpg-1677142264.jpg?crop=0.623xw:0.934xh;0.176xw,0.0660xh&resize=640:*',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d390d8a433000011077fa?auth_key=1704866175-s1SOznhPV8suGMZZZaPieUdkDaOc43IWaMPtJkNTHTALnxNjJqocDHul5PYWrticzXEtoaDWN7gFCIsl-0-0bd1099468a7f639653aa7614df504a1',
+        name: 'Dont worry',
+        singer: '请回答1988',
+        album: '请回答1988',
+        pic: 'https://hips.hearstapps.com/hmg-prod/images/back-to-1988-stars-jpg-1677142264.jpg?crop=0.623xw:0.934xh;0.176xw,0.0660xh&resize=640:*',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d390d5a3b260001df374f?auth_key=1704866335-RZMcxZE4oTwz6Yuxzzu2PK0D0IQOh3Gt5umPnWLreqMGGvXGn8M8c2Ft9ndIOrKP47rKm3dde4BCkKmO-0-7a039c4da88cab2c587a516a78d5f2be',
+        name: 'Last Dance',
+        singer: '五条人',
+        album: 'Cover',
+        pic: 'https://www.somervilletheatre.com/wp-content/uploads/2023/10/photo-600x400.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39177c794d00010c3e3d?auth_key=1704866387-jjsOTGde632bxQSUAeDTcGUx9lYBnWw9qOfUgb6P8h3oR3U5G46MKNLcaIxXI9TbQmBDMXeKWWE1XsZY-0-c21364397021e63990b0d23be83fc133',
+        name: '相见恨晚',
+        singer: '彭佳慧',
+        album: '敲敲我的头',
+        pic: 'https://i.kfs.io/artist/global/4178,0v4/fit/500x500.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d390d7c794d00010c3e3c?auth_key=1704866562-5aK2k0mH1xizaPECyZdmp453pLsokfV7orKXK3ZPebquYOmfFiqBj0GSXmP0mj1k0qCjNLDchGMzJe2W-0-c6166526ebe4d92625749a1bc3c11233',
+        name: '郭源潮',
+        singer: '宋冬野',
+        album: 'EP',
+        pic: 'https://s.eslite.dev/upload/product/o/2682306240007/20221130013247283751.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39498a43300001107810?auth_key=1704866605-bz4pFmbAaLxvNdG6Lyd9lzCIWUDZHBxTGM6BZPH7JfztmJPi34aVmQz1sizdaW8CS6CmZAD3ae3mLSMC-0-450e5c363e7c44478a2f6fbff96b9169',
+        name: '残酷的温柔',
+        singer: '彭佳慧',
+        album: 'Cover',
+        pic: 'https://i.kfs.io/artist/global/4178,0v4/fit/500x500.jpg',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d3949885bdf000129f586?auth_key=1704866657-csSarqo4uU45dfEEdJ4wKefISr1MepuoxJbRE5f1lWbDiYB4LqN9uWwaY6aCiZ6q9SmH9HujNf6AbTOF-0-077793e4d4edf3d3fed747257a7320c8',
+        name: 'Say Something',
+        singer: 'KZ',
+        album: 'Cover',
+        pic: 'https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/15f0212417a646648b1d045ca0a9c364~tplv-xv4ileqgde-resize-w:750.image',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39497c794d00010c3e52?auth_key=1704866706-nVG2dl353LlYXZKGzLOvx6RWbskTtFZpsGSu2ZSlP5AYPVDfTR6WgCCuyJ4BvUoi6O4rPZicR6bnPkSb-0-6f6219039d9964d1a8f11fbf1b111517',
+        name: 'Last Dance',
+        singer: '徐佳莹',
+        album: 'Cover',
+        pic: 'https://img03.sogoucdn.com/v2/thumb/retype_exclude_gif/ext/auto/crop/xy/ai/w/1284/h/722?appid=200698&url=https://pic.baike.soso.com/ugc/baikepic2/23439/20220419114614-384822784_png_1366_912_1747956.jpg/0',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d39495a3b260001df3761?auth_key=1704866742-zd4M1pjMzFmlGHsixQ0nqB7xNiyJpLxqiOVJ7Zpcxk5CedlNHL87nxdhkBZptsMzhdpK65yKnIMkf4Sd-0-239a3a926ae4acde585c9d5dcb109116',
+        name: '笑看风云',
+        singer: '汪小敏',
+        album: 'Cover',
+        pic: 'https://p6-pc-sign.douyinpic.com/image-cut-tos-priv/2a179eb2f523b6ae5462a7514dcd2d69~tplv-dy-resize-origshort-autoq-75:330.jpeg?x-expires=2016313200&x-signature=5LpjQrOi4DdCnpRvI9YvKrlGfLA%3D&from=3213915784&s=PackSourceEnum_AWEME_DETAIL&se=false&sc=cover&biz_tag=pcweb_cover&l=20231126070257D8DB88E4C416D2F916C6',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659cf9d4885bdf000129e864?auth_key=1704866876-m9X4LUW0GtHaMdekBxeoNWz45birY01DpT1EIZvSHtet0sWk5ug0ggC8PaB4YpFThVa662Qw2Q4to4hW-0-e318888c453164a09c24a6efc23e5036',
+        name: '乌云典当记',
+        singer: '万能青年旅店',
+        album: 'EP',
+        pic: 'https://assets.audiomack.com/gosoviet/c0256f3b805d76b2c6d4d1547aff548d621de79bc69745475e6a96c359b1490a.jpeg?width=1000&height=1000&max=true',
+        long:'240',
+    },{
+        src: 'https://drives.smvm.cn/src/659d904d885bdf000129fa92?auth_key=1704868563-nHg4VFfWlMqujfS6Uah4xET3RrzCHNaTW2ZDSk8s1SkjmtaInBkSlVWFnfQm7MTaFM4rHQsfOUYYpnvi-0-2b38e0d393503111b309b8086768b24f',
+        name: '狗尿馆',
+        singer: '万能青年旅店',
+        album: '万能青年旅店',
+        pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+        long:'240',
+    },{
+      src: 'https://drives.smvm.cn/src/659d904d576c640001c94bf0?auth_key=1704868588-y8kVJNuAaRZVfVXXDlIA21mNKpNGbLo4XyiJ2gNpAPQGwEZtnzlUovqOZg0pbwkvn011OX33D6x6IOeF-0-0fb7039b3deeef698c0877863e6ebaff',
+      name: '不万能的喜剧',
+      singer: '万能青年旅店',
+      album: '万能青年旅店',
+      pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+      long:'240',
+  },{
+    src: 'https://drives.smvm.cn/src/659d904d8a43300001107d02?auth_key=1704868616-NfAktGgtF35RUMOWACVncKVmpvMNVPBtyK29gzE7rVBkSZNRCw1UD4AQZSP7EMlrnusinH9YPkjwv86r-0-014e5d1b83cc280b567c41b5ff8b8569',
+    name: '揪心的玩笑与漫长的白日梦',
+    singer: '万能青年旅店',
+    album: '万能青年旅店',
+    pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+    long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d38ba885bdf000129f570?auth_key=1704867231-8vik0GdVnonv2QGc1Zpza5d0xJy8zgDjjjP6XURo5lkoDjLBr1yI0PEUJ65CiJRKTEgI1iU5MAuKleGF-0-c98438d2d2ac0fe7680a98414dbf8e88',
+  name: '大石碎胸口',
+  singer: '万能青年旅店',
+  album: '万能青年旅店',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d904d239abc00011611d9?auth_key=1704868653-7yH6k3Tw5gHtqJ1gxzZQ3hdPKuKv5RXN3RwGFkSpbtch6BO4BZ39b4lu1fYO9sHETgDD6B4XtvABhkVu-0-6c75b1e98f2d4f68ba93a4e18dd28809',
+  name: '洋鸟消夏录',
+  singer: '万能青年旅店',
+  album: '万能青年旅店',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d904d576c640001c94bf1?auth_key=1704868674-156YZZMnxm2FmimxG8Otx1xTCobW2jJRrfXatHy0isgX0YWCRrCSHui9Kur4zfN8V2steoYN62fGSlhe-0-bae5f216d36ebc26b1e596407d0d52b3',
+  name: '秦皇岛',
+  singer: '万能青年旅店',
+  album: '万能青年旅店',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d9051885bdf000129fa93?auth_key=1704868694-Ciaogiqgy2gH8xuuSb6kdGRW5uJRp60nnR4TcKOkkROLsTuOWg1LTMXRjaG69HDaJ6Zw4qIduzHUr552-0-ab6caf3ce9e7676e7690530a4f57b8d0',
+  name: '十万嬉皮',
+  singer: '万能青年旅店',
+  album: '万能青年旅店',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d90568a43300001107d03?auth_key=1704868735-kCa2RG0LrEE7yzIgiPrlfmBR76FtZQT4aGPSGswKd7L60kkzUPl0wTySZZHTjbmGzc5vj98ofWYzVo95-0-d94eaa1295577a2d4add865b3803cab8',
+  name: '在这颗行星所有的酒馆',
+  singer: '万能青年旅店',
+  album: '万能青年旅店',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d9061239abc00011611da?auth_key=1704868755-n8Fy95mTZTuTSXpwR1VNBVc0qK8j5jpDHVNy84gjibkvLPTV5AgEjOJWhmQOAq1y2KUjqhYIFvqxbljW-0-f5b27c858fbcb5bf0482af18b14714bb',
+  name: '杀死那个石家庄人',
+  singer: '万能青年旅店',
+  album: '万能青年旅店',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/f/fd/S4614409.jpg',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d39f25a3b260001df3795?auth_key=1704867638-LuCBK35BztALmYsAzmj4AZdJV1YibJSKdzsbvSmrpHBec09iOkoGfv5SA0mUEjXrEvFH1a0PVlymCokH-0-d324d0011f18815437c7500b1ca59961',
+  name: '早',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659cf9d45a3b260001df2a02?auth_key=1704867495-DgB1Ar40VbwJisEKP74Y3EBOwaADrjR1ukhdHf0o4egWXFFJrT194SdZiqt6NYydThRvJ2hZthXcEqDD-0-d2f0842393d643edee9809e607eab2da',
+  name: '泥河',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d39f27c794d00010c3e89?auth_key=1704867620-HkbEhsHgS71BwryXo1RvFA5vUQo5B3Qris1CuqsTjcgqLEDkMxzVHL9ucFngZtSgK7uYYbueT31LzDi4-0-042c767972f9bfe7b5a4976823758486',
+  name: '平等云雾',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d8ff0576c640001c94bee?auth_key=1704868789-W2I90TlJgZbuCAqn8XrpeZextNBScJC78tETspr9ThX9zkZpPI4MbeKFWKZ4Whl9AnPPTyoqaHzlk51V-0-0e6c61ba8b25879edf8bc57bad60e918',
+  name: '采石',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d390d885bdf000129f572?auth_key=1704867588-4nj70SYOOwvXoUf2814k6gjFaXjg134bHezjINEFFzPlXlhPI0ivvajHW6WTvC2BzZC73jyAfdTuhyy6-0-f549e6a238f520d0d45fbaa21bac9c94',
+  name: '山雀',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d8ff0885bdf000129fa90?auth_key=1704868822-1zm75NozQQI6BGEsTc4swdB03KKTlseFZDjCMFOTDbuAAVMfdwMd5rNJsKcGn0g5jJqbPQdm8A8R6yXs-0-39919687be698a695344b0944fba750a',
+  name: '绕越',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d8ff0239abc00011611d8?auth_key=1704868840-1c365QfHkvE10mEVXeKLISDqIuh9gE3FafkxYq2ujy2tfekeNWJAgbvN1D5fnOqTrvOUMyE11H6y4leh-0-f6117b372b95f9e45e017e6e12e04584',
+  name: '河北墨麒麟',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d8ff08a43300001107d00?auth_key=1704868861-DeQTDLYIdfAnx8wGgliSLJqlcDsBTykJjXMK0BiXblmHtFvuhI0gqHturDMH2XhK4D1OwaZVcwNxdpOB-0-2405e5c36e0d8e98cb8ec9fb456752c2',
+  name: '郊眠寺',
+  singer: '万能青年旅店',
+  album: '冀西南林路行',
+  pic: 'https://i.scdn.co/image/ab67616d0000b2739a3446ba8c977f0efa3657f8',
+  long:'240',
+},{
+  src: 'https://drives.smvm.cn/src/659d906b576c640001c94bf2?auth_key=1704868884-NyoIj8xNdtNXiB2pf1s1fudNbWG3PqlCXaj5RbynwNDWb0aOnzN0IjYAgiXflf9T4EEQ4jzLZHCjo6V8-0-1342e4d14adb57cfe9ad7ce2d90904ce',
+  name: '张洲',
+  singer: '万能青年旅店',
+  album: 'EP',
+  pic: 'https://upload.wikimedia.org/wikipedia/zh/6/69/S28691472.jpg',
+  long:'240',
+}
+],
+            currentIndex: -1, // 初始未播放
+            playRandomSong: function () {
+                this.currentIndex = Math.floor(Math.random() * this.musicList.length);
+                this.playSong();
+            },
+            firstplayRandomSong: function () {
+                this.currentIndex = Math.floor(Math.random() * this.musicList.length);
+                this.firstplaySong();
+            },
+            playPause: function () {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const playPauseIcon = document.getElementById('playPauseIcon');
+                const albumCover = document.getElementById('albumCover');
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    playPauseIcon.classList.remove('fa-play');
+                    playPauseIcon.classList.add('fa-pause');
+                    albumCover.classList.add('rotate');
+                } else {
+                    audioPlayer.pause();
+                    playPauseIcon.classList.remove('fa-pause');
+                    playPauseIcon.classList.add('fa-play');
+                    albumCover.classList.remove('rotate');
+                }
+            },
+            playPrevious: function () {
+                this.currentIndex = (this.currentIndex - 1 + this.musicList.length) % this.musicList.length;
+                this.playSong();
+            },
+            playNext: function () {
+                this.currentIndex = (this.currentIndex + 1) % this.musicList.length;
+                this.playSong();
+            },
+            showPlaylist: function () {
+                this.populatePlaylist();
+                const overlay = document.getElementById('overlay');
+                overlay.classList.add('is-active');
+            },
+            closePlaylist: function () {
+                const overlay = document.getElementById('overlay');
+                overlay.classList.remove('is-active');
+            },
+            populatePlaylist: function () {
+                const playlistItems = document.getElementById('playlistItems');
+                playlistItems.innerHTML = "";
+                this.musicList.forEach((song, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = '<span>' + song.name + '</span><span>《' + song.album + '》</span>';
+                    listItem.classList.add('playlist-item', 'is-clickable');
+                    if (index === this.currentIndex) {
+                        listItem.classList.add('is-playing');
+                        const currentTrackIcon = document.createElement('span');
+                        currentTrackIcon.classList.add('current-track-icon');
+                        currentTrackIcon.innerHTML = '<i class="fas fa-smoking"></i>';
+                        listItem.appendChild(currentTrackIcon);
+                        // 使用 setTimeout 进行延迟操作
+                        setTimeout(() => {
+                          const currentTrackElement = document.querySelector('.is-playing');
+                          if (currentTrackElement) {
+                            currentTrackElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          } else {
+                            console.error('Element not found');
+                          }
+                        }, 0);
+                    }
+                    listItem.addEventListener('click', () => {
+                        this.currentIndex = index;
+                        this.playSong();
+                        this.closePlaylist();
+                    });
+                    playlistItems.appendChild(listItem);
+                });
+            },
+            playSong: function () {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const playPauseIcon = document.getElementById('playPauseIcon');
+                const albumCover = document.getElementById('albumCover');
+                const currentSong = this.musicList[this.currentIndex];
+                audioPlayer.src = currentSong.src;
+                albumCover.src = currentSong.pic;
+                audioPlayer.preload = 'auto';
+                audioPlayer.load();
+                audioPlayer.play();
+                document.getElementById('AlbumInfo').textContent = `《${currentSong.album}》`;
+                document.getElementById('songName').textContent = currentSong.name;
+                document.getElementById('artistAlbumInfo').textContent = `${currentSong.singer}`;
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+            },
+            firstplaySong: function () {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const playPauseIcon = document.getElementById('playPauseIcon');
+                const albumCover = document.getElementById('albumCover');
+                const currentSong = this.musicList[this.currentIndex];
+                audioPlayer.src = currentSong.src;
+                albumCover.src = currentSong.pic;
+                document.getElementById('AlbumInfo').textContent = `《${currentSong.album}》`;
+                document.getElementById('songName').textContent = currentSong.name;
+                document.getElementById('artistAlbumInfo').textContent = `${currentSong.singer}`;
+                playPauseIcon.classList.add('fa-play');
+            },
+            updateTotalTime: function () {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const totalTimeDisplay = document.getElementById('totalTime');
+                const currentSong = this.musicList[this.currentIndex];
+                if (isFinite(audioPlayer.duration)) {
+                    totalTimeDisplay.textContent = this.formatTime(audioPlayer.duration);
+                }else{
+                    totalTimeDisplay.textContent = this.formatTime(currentSong.long);
+                }
+                
+            },
+            updateTime: function () {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const currentTimeDisplay = document.getElementById('currentTime');
+                currentTimeDisplay.textContent = this.formatTime(audioPlayer.currentTime);
+                this.updateProgressBar();
+            },
+            updateProgressBar: function () {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const progressBar = document.getElementById('progressBar');
+                const currentSong = this.musicList[this.currentIndex];
+                if (isFinite(audioPlayer.duration)) {
+                    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                    progressBar.value = percentage;
+                }else{
+                    const percentage = (audioPlayer.currentTime / currentSong.long) * 100;
+                    progressBar.value = percentage;
+                }
+            },
+            formatTime: function (time) {
+                const minutes = Math.floor(time / 60);
+                const seconds = Math.floor(time % 60);
+                const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                return formattedTime;
+            },
+            seek: function (event) {
+                const audioPlayer = document.getElementById('audioPlayer');
+                const progressBar = document.getElementById('progressBar');
+                const percent = event.offsetX / progressBar.clientWidth;
+                audioPlayer.currentTime = percent * audioPlayer.duration;
+                this.updateProgressBar();
+            }
+        };
+        MusicPlayer.firstplayRandomSong();
+        audioPlayer.addEventListener('ended', function () {
+            MusicPlayer.playNext();
+        });
+    </script>
+</body>
+
+</html>
